@@ -10,10 +10,27 @@ const styles = StyleSheet.create({
   }
 })
 
+const line1 = 'import HackSuite from \'FBINetworkPkg\''
+const line2 = '<View>\n    { parseBankPin }\n</View>'
+const line3 = '<Container>\n    <BreachTool>\n        { illegalExpression }\n    </BreachTool>\n    {activateBotnet}\n</Container>'
+const line4 = 'componentDidMount() {\n    this.displayAnonLogo()\n    HackSuite.disableAlarm()\n}'
+const line5 = 'import Heartbleed from \'BelarusNetworkPack\''
+const line6 = 'serializeData() {\n    buffer = 00<<bitstream\n    commit(inout buffer)\n    return buffer.clear()\n}'
+
 export const App = () => (
   <View style={styles.container}>
     <Text style={{ color: 'green' }}>
-      Happy hacking!
+      {line1}
+      {'\n'}
+      {line2}
+      {'\n'}
+      {line3}
+      {'\n'}
+      {line4}
+      {'\n'}
+      {line5}
+      {'\n'}
+      {line6}
     </Text>
   </View>
 )
