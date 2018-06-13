@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Button } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -19,6 +19,12 @@ const line6 = 'serializeData() {\n    buffer = 00<<bitstream\n    commit(inout b
 
 export const App = () => (
   <View style={styles.container}>
+    <Button
+      onPress={handlePress}
+      title="Learn More"
+      color="#841584"
+      accessibilityLabel="Learn more about this purple button"
+    />
     <Text style={{ color: 'green' }}>
       {line1}
       {'\n'}
@@ -34,5 +40,8 @@ export const App = () => (
     </Text>
   </View>
 )
+
+function handlePress() {
+}
 
 export default App
