@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Button } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import TextDisplay from './TextDisplay'
 
 const styles = StyleSheet.create({
@@ -13,18 +13,8 @@ const styles = StyleSheet.create({
 
 export const App = () => (
   <View style={styles.container}>
-    <Button
-      onPress={handlePress}
-      title="Tap and hack!"
-      color="#fff"
-      accessibilityLabel=""
-    />
     <TextDisplay />
   </View>
 )
-
-function handlePress() {
-  // ...
-}
 
 export default App
