@@ -7,15 +7,19 @@ const line3 = '<Container>\n    <BreachTool>\n        { illegalExpression }\n   
 const line4 = 'componentDidMount() {\n    this.displayAnonLogo()\n    HackSuite.disableAlarm()\n}'
 const line5 = 'import Heartbleed from \'BelarusNetworkPack\''
 const line6 = 'serializeData() {\n    buffer = 00<<bitstream\n    commit(inout buffer)\n    return buffer.clear()\n}'
+const line7 = 'setDelta() {\n    this.step += hackbits\n}'
 
-const hacks = [line1, line2, line3, line4, line5, line6]
+const firstLine = '<init hacker prompt>\n'
+const hacks = [line1, line2, line3, line4, line5, line6, line7]
 const kFontSize = 9
+const kRed = '#d43535'
+const kViolet = '#7113b9'
 
 class TextDisplay extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      textData: '<init hacker prompt>\n'
+      textData: firstLine
     }
     this.appendText = this.appendText.bind(this)
     this.clearText = this.clearText.bind(this)
@@ -30,7 +34,7 @@ class TextDisplay extends Component {
 
   clearText() {
     this.setState(
-      { textData: '<init hacker prompt>\n' }
+      { textData: firstLine }
     )
   }
 
@@ -41,13 +45,13 @@ class TextDisplay extends Component {
         <Button
           onPress={this.clearText}
           title="Clear"
-          color="#d43535"
+          color={kRed}
           accessibilityLabel=""
         />
         <Button
           onPress={this.appendText}
           title="Tap and hack!"
-          color="#7113b9"
+          color={kViolet}
           accessibilityLabel=""
         />
         <Text style={{ color: 'green', fontSize: kFontSize }}>
