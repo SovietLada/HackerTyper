@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, Button, View } from 'react-native'
+import { Text, Button, View, StatusBar } from 'react-native'
 
 const line1 = 'import HackSuite from \'FBINetworkPkg\''
 const line2 = '<View>\n    { parseBankPin }\n</View>'
@@ -9,6 +9,7 @@ const line5 = 'import Heartbleed from \'BelarusNetworkPack\''
 const line6 = 'serializeData() {\n    buffer = 00<<bitstream\n    commit(inout buffer)\n    return buffer.clear()\n}'
 
 const hacks = [line1, line2, line3, line4, line5, line6]
+const kFontSize = 9
 
 class TextDisplay extends Component {
   constructor(props) {
@@ -17,31 +18,39 @@ class TextDisplay extends Component {
       textData: '<init hacker prompt>\n'
     }
     this.appendText = this.appendText.bind(this)
-  }
-
-  componentDidMount() {
-    this.appendText()
-    this.appendText()
+    this.clearText = this.clearText.bind(this)
   }
 
   appendText() {
-    const rand = Math.floor(Math.random() * hacks.length)
-    const randText = hacks[rand]
+    const randText = hacks[Math.floor(Math.random() * hacks.length)]
     this.setState((prevState) => (
       { textData: `${prevState.textData}\n${randText}` }
     ))
   }
 
+  clearText() {
+    this.setState(
+      { textData: '<init hacker prompt>\n' }
+    )
+  }
+
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, flexDirection: 'column' }}>
+        <StatusBar hidden />
+        <Button
+          onPress={this.clearText}
+          title="Clear"
+          color="#d43535"
+          accessibilityLabel=""
+        />
         <Button
           onPress={this.appendText}
           title="Tap and hack!"
-          color="#fff"
+          color="#7113b9"
           accessibilityLabel=""
         />
-        <Text style={{ color: 'green' }}>
+        <Text style={{ color: 'green', fontSize: kFontSize }}>
           {this.state.textData}
         </Text>
       </View>
