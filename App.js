@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ScrollView } from 'react-native'
 import TextDisplay from './TextDisplay'
 
 const styles = StyleSheet.create({
@@ -11,7 +11,9 @@ const styles = StyleSheet.create({
 
 export const App = () => (
   <View style={styles.container}>
-    <TextDisplay />
+    <ScrollView>
+      <TextDisplay />
+    </ScrollView>
   </View>
 )
 

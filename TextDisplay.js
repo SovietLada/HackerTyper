@@ -39,7 +39,7 @@ class TextDisplay extends Component {
   appendText() {
     const randText = hacks[Math.floor(Math.random() * hacks.length)]
     this.setState((prevState) => (
-      { textData: `${prevState.textData}\n${randText}` }
+      { textData: `${randText}\n${prevState.textData}` }
     ))
   }
 
