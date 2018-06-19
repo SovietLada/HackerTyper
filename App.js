@@ -5,7 +5,8 @@ import TextDisplay from './TextDisplay'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0d0d0d'
+    backgroundColor: '#0d0d0d',
+    paddingTop: 10
   }
 })
 
