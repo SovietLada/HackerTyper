@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, ScrollView } from 'react-native'
+import { StyleSheet, View, ScrollView, SafeAreaView } from 'react-native'
 import TextDisplay from './TextDisplay'
 
 const styles = StyleSheet.create({
@@ -10,11 +10,13 @@ const styles = StyleSheet.create({
 })
 
 export const App = () => (
-  <View style={styles.container}>
-    <ScrollView>
-      <TextDisplay />
-    </ScrollView>
-  </View>
+  <SafeAreaView style={{ flex: 1, backgroundColor: '#d43535' }}>
+    <View style={styles.container}>
+      <ScrollView>
+        <TextDisplay />
+      </ScrollView>
+    </View>
+  </SafeAreaView>
 )
 
 export default App
